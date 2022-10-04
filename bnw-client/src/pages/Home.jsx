@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import CrestInverted from "../components/CrestInverted";
+import HomeProduct from "../components/HomeProduct";
+import IntersectionTest from "../components/IntersectionTest";
 
 const Container = styled.div`
   width: 100%;
@@ -13,7 +15,7 @@ const MainHeader = styled.h1`
   justify-content: center;
   align-items: center;
 
-  padding: 20px;
+  padding: 20px 0;
 `;
 
 const DivideLine = styled.hr`
@@ -30,6 +32,13 @@ function Home() {
       <MainHeader>Black and White Vintage</MainHeader>
       <DivideLine />
       <CrestInverted />
+      <DivideLine />
+      <HomeProduct />
+      <HomeProduct textRight="row-reverse" />
+      <HomeProduct />
+      <HomeProduct textRight={true} />
+      <HomeProduct />
+      <HomeProduct textRight={true} />
     </Container>
   );
 }
