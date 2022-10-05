@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logoImg from "../assets/bnw-logo.webp";
 import {
@@ -66,9 +67,18 @@ function Navbar() {
       </LogoContainer>
       <ItemsContainer>
         <NavItem>Products</NavItem>
-        <NavItem>Drink the Town, Smoke the Town</NavItem>
-        <NavItem>Jimmy Hasty</NavItem>
-        <NavItem>Tommy McConville</NavItem>
+        <Link
+          to="/dttstt"
+          style={{ textDecoration: "none", width: "120px", flexShrink: "0" }}
+        >
+          <NavItem>Drink the Town, Smoke the Town</NavItem>
+        </Link>
+        <Link to="/jimmyhasty" style={{ textDecoration: "none" }}>
+          <NavItem>Jimmy Hasty</NavItem>
+        </Link>
+        <Link to="/tommymcconville" style={{ textDecoration: "none" }}>
+          <NavItem>Tommy McConville</NavItem>
+        </Link>
         <NavItem>About</NavItem>
       </ItemsContainer>
       <CartDiv>
