@@ -1,6 +1,7 @@
-import { Add, Remove } from "@mui/icons-material";
-import React from "react";
+import { Add, Preview, Remove } from "@mui/icons-material";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import { CartContext } from "../context/cartContext";
 
 import modelStairs from "../assets/dttstt/dttstt_model_male_stairs.jpg";
 
@@ -107,6 +108,25 @@ const PurchaseButton = styled.button`
 `;
 
 function Product({ product }) {
+  const { cart, setCart } = useContext(CartContext);
+  const [prodQuant, setProdQuant] = useState(0);
+  const [prodSize, setProdSize] = useState("S");
+
+  const changeQuantity = (direction) => {
+    if (prodQuant + direction < 0) return;
+    setProdQuant((prev) => prev + direction);
+  };
+
+  const addToCart = () => {
+    cart.products.push({
+      name: product.head,
+      quantity: prodQuant,
+      size: prodSize,
+    });
+    cart.cartQuantity += 1;
+  };
+
+  console.log(prodSize, "prodSize");
   return (
     <ProductDiv>
       <ProductDescription>
@@ -121,7 +141,7 @@ function Product({ product }) {
           </ProductColorDiv>
           <ProductSizeDiv>
             <ProductSizeLabel>Size: </ProductSizeLabel>
-            <ProductSelect>
+            <ProductSelect onChange={(e) => setProdSize(e.target.value)}>
               {product.sizes.map((size) => (
                 <option>{size}</option>
               ))}
@@ -130,11 +150,17 @@ function Product({ product }) {
         </ProductAttr>
         <PurchaseDiv>
           <QuantityDiv>
-            <Remove style={{ cursor: "pointer" }} />
-            <Quantity>1</Quantity>
-            <Add style={{ cursor: "pointer" }} />
+            <Remove
+              style={{ cursor: "pointer" }}
+              onClick={() => changeQuantity(-1)}
+            />
+            <Quantity>{prodQuant}</Quantity>
+            <Add
+              style={{ cursor: "pointer" }}
+              onClick={() => changeQuantity(1)}
+            />
           </QuantityDiv>
-          <PurchaseButton>Add To Cart</PurchaseButton>
+          <PurchaseButton onClick={addToCart}>Add To Cart</PurchaseButton>
         </PurchaseDiv>
       </ProductDescription>
       <ProductImageDiv>

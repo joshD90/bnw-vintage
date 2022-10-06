@@ -1,0 +1,10 @@
+Today I want to contact Mam and make plans for the weekend
+I want to put on a load of clothes
+I want to contact mushy and make plans for the walk
+
+I want to create a cart context.
+I want to create a cart page.
+
+I want to create a basic express api.
+I want to add mongoose.
+I want to add cors

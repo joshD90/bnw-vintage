@@ -82,10 +82,12 @@ function Navbar() {
         <NavItem>About</NavItem>
       </ItemsContainer>
       <CartDiv>
-        <NotificationBadge
-          materialUI={<ShoppingCartOutlined />}
-          notificationNumber="0"
-        ></NotificationBadge>
+        <Link to="/cart" style={{ textDecoration: "none", flexShrink: "0" }}>
+          <NotificationBadge
+            materialUI={<ShoppingCartOutlined />}
+            notificationNumber="0"
+          ></NotificationBadge>
+        </Link>
       </CartDiv>
     </Container>
   );

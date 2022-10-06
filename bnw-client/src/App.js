@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Dttstt from "./pages/Dttstt";
 import JimmyHasty from "./pages/JimmyHasty";
 import TommyMcconville from "./pages/TommyMcconville";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/dttstt/" element={<Dttstt />} />
           <Route path="jimmyhasty/" element={<JimmyHasty />} />
           <Route path="/tommymcconville" element={<TommyMcconville />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </Router>

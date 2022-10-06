@@ -1,5 +1,5 @@
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
 import model1 from "../assets/dttstt/dttstt_model_dreds.jpg";
 import model2 from "../assets/dttstt/dttstt_model_female_hoody.jpg";
@@ -9,6 +9,7 @@ import model5 from "../assets/dttstt/dttstt_model_sunglasses.jpg";
 import model6 from "../assets/dttstt/dttstt_model_tshirt.jpg";
 import model7 from "../assets/dttstt/dttstt_model_wall.jpg";
 import { dttsttProductText as productTextArray } from "../assets/textSnippets";
+import { CartContext } from "../context/cartContext";
 
 const Container = styled.div`
   height: 400px;
