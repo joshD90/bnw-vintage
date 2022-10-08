@@ -122,6 +122,9 @@ function Product({ product }) {
       name: product.head,
       quantity: prodQuant,
       size: prodSize,
+      price: product.price,
+      color: "black",
+      img: product.img,
     });
     cart.cartQuantity += 1;
   };

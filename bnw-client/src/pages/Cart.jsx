@@ -2,10 +2,14 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 import styled from "styled-components";
 import tommyShirt from "../assets/tommy_mcconville/tommy_mcconville_shirt.jpg";
-import { Add, Remove } from "@mui/icons-material";
+
+import CartProduct from "../components/CartProduct";
 
 const Container = styled.div`
   width: 100%;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  min-height: 75vh;
 `;
 const HeaderDiv = styled.div`
   margin: 20px;
@@ -13,6 +17,8 @@ const HeaderDiv = styled.div`
 const Header = styled.h1`
   text-align: center;
   margin-bottom: 20px;
+  padding: 0;
+  margin-top: 0;
 `;
 const HeaderButtonsDiv = styled.div`
   display: flex;
@@ -45,6 +51,7 @@ const ProductDiv = styled.div`
   border: solid 1px gray;
   border-radius: 5px;
   margin-right: 2px;
+  background-color: #e3e3e3;
 `;
 const SummaryDiv = styled.div`
   flex: 1;
@@ -53,72 +60,31 @@ const SummaryDiv = styled.div`
   align-items: center;
   border: solid 1px gray;
   border-radius: 5px;
-`;
-const ProductContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 8rem;
-  overflow: hidden;
-  width: 100%;
-`;
-const ProductImage = styled.img`
-  height: 100%;
-  object-fit: cover;
-`;
-const ProductDetailDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-left: 10px;
-  height: 100%;
-  flex: 3;
-`;
-const ProductDetail = styled.span`
-  display: flex;
-  align-items: center;
-`;
-const ColorBall = styled.div`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-  margin-left: 5px;
-`;
-const ProductAmountDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex: 1.5;
-  border: 1px solid gray;
-  height: 100%;
-`;
-const ProductQuantDiv = styled.div`
-  display: flex;
-  align-items: center;
+  background-color: #e3e3e3;
 `;
 
-const ProductQuantNum = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  border: solid 1px gray;
-  border-radius: 5px;
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
+const SummaryHead = styled.h1`
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
 `;
-const ProductPrice = styled.span`
-  margin: 20px;
-  font-size: 1.5rem;
-  color: gray;
+const SummaryDetailDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 10px;
+  width: 100%;
+`;
+const SummaryDetailType = styled.span`
+  margin-left: 5px;
+`;
+const SummaryDetailAmount = styled.span`
+  margin-right: 5px;
+  margin-bottom: 20px;
 `;
 
 function Cart() {
-  const cart = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   console.log(cart, "cart from cart component");
   return (
     <Container>
@@ -131,33 +97,29 @@ function Cart() {
       </HeaderDiv>
       <BodyDiv>
         <ProductDiv>
-          <ProductContainer>
-            <ProductImage src={tommyShirt} />
-            <ProductDetailDiv>
-              <ProductDetail>
-                <b>Product: </b> Tommy McConville Shirt
-              </ProductDetail>
-              <ProductDetail>
-                <b>ID: </b> 12345426667
-              </ProductDetail>
-              <ProductDetail>
-                <b>Size: </b> S
-              </ProductDetail>
-              <ProductDetail>
-                <b>Color: </b> <ColorBall color="black" />
-              </ProductDetail>
-            </ProductDetailDiv>
-            <ProductAmountDiv>
-              <ProductQuantDiv>
-                <Remove style={{ cursor: "pointer" }} />
-                <ProductQuantNum>2</ProductQuantNum>
-                <Add style={{ cursor: "pointer" }} />
-              </ProductQuantDiv>
-              <ProductPrice>€ 20</ProductPrice>
-            </ProductAmountDiv>
-          </ProductContainer>
+          {cart.products.map((product) => (
+            <CartProduct product={product} />
+          ))}
         </ProductDiv>
-        <SummaryDiv>fdsafdsa</SummaryDiv>
+        <SummaryDiv>
+          <SummaryHead>Order Summary</SummaryHead>
+          <SummaryDetailDiv>
+            <SummaryDetailType>SubTotal:</SummaryDetailType>
+            <SummaryDetailAmount>€ 120.00</SummaryDetailAmount>
+          </SummaryDetailDiv>
+          <SummaryDetailDiv>
+            <SummaryDetailType>Shipping:</SummaryDetailType>
+            <SummaryDetailAmount>€ 5.00</SummaryDetailAmount>
+          </SummaryDetailDiv>
+          <SummaryDetailDiv>
+            <SummaryDetailType>Discount:</SummaryDetailType>
+            <SummaryDetailAmount>€ -10.00</SummaryDetailAmount>
+          </SummaryDetailDiv>
+          <SummaryDetailDiv>
+            <SummaryDetailType>Total:</SummaryDetailType>
+            <SummaryDetailAmount>€ 115.00</SummaryDetailAmount>
+          </SummaryDetailDiv>
+        </SummaryDiv>
       </BodyDiv>
     </Container>
   );
