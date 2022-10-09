@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import tommyShirt from "../assets/tommy_mcconville/tommy_mcconville_shirt.jpg";
 
@@ -24,6 +25,7 @@ const DetailsDiv = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   height: 100%;
+  width: 100%;
 `;
 const DetailsContainer = styled.div`
   display: flex;
@@ -38,7 +40,20 @@ const DetailValue = styled.span`
   margin-left: 20px;
 `;
 
+const EditDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100px;
+  height: 100%;
+`;
+const EditButton = styled.button`
+  margin-right: 15px;
+  margin-bottom: 15px;
+`;
+
 function AdminProduct({ product }) {
+  const navigate = useNavigate();
   return (
     <Container>
       <ProductImage src={tommyShirt} />
@@ -61,13 +76,30 @@ function AdminProduct({ product }) {
         </DetailsContainer>
         <DetailsContainer>
           <DetailLabel>Colors Available</DetailLabel>
-          <DetailValue>{product.color}</DetailValue>
+          <DetailValue>
+            {product.color.map((color) => (
+              <span style={{ marginRight: "10px" }}>{color}</span>
+            ))}
+          </DetailValue>
         </DetailsContainer>
         <DetailsContainer>
           <DetailLabel>Sizes Available</DetailLabel>
-          <DetailValue>{product.sizes}</DetailValue>
+          <DetailValue>
+            {product.sizes.map((size, index) => (
+              <span style={{ marginRight: "10px" }} key={index}>
+                {size.toUpperCase()}
+              </span>
+            ))}
+          </DetailValue>
         </DetailsContainer>
       </DetailsDiv>
+      <EditDiv>
+        <EditButton
+          onClick={() => navigate(`/admin/products/${product._id}/edit`)}
+        >
+          Edit
+        </EditButton>
+      </EditDiv>
     </Container>
   );
 }

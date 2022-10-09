@@ -28,6 +28,7 @@ function AdminProducts() {
       })
       .catch((e) => console.log(e));
   }, []);
+
   return (
     <Container>
       <ProductsContainer>

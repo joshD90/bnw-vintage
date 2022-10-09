@@ -16,6 +16,7 @@ import Cart from "./pages/Cart";
 import Upload from "./pages/admin/UploadPage";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminProducts from "./pages/admin/AdminProducts";
+import AdminProductEdit from "./pages/admin/AdminProductEdit";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -38,6 +39,10 @@ function App() {
           }
         />
         <Route path="/admin/products/" element={<AdminProducts />} />
+        <Route
+          path="/admin/products/:productId/edit"
+          element={<AdminProductEdit />}
+        />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="dttstt/" element={<Dttstt />} />
