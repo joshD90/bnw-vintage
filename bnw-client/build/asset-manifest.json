@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.js": "./static/js/main.67cd4880.js",
+    "static/media/dttstt_model_sunglasses.jpg": "./static/media/dttstt_model_sunglasses.61abae61e066141f64e1.jpg",
+    "static/media/dttstt_model_glasses.jpg": "./static/media/dttstt_model_glasses.27a80214861c07e559a1.jpg",
+    "static/media/dttstt_model_wall.jpg": "./static/media/dttstt_model_wall.33d1843dfec86b8e11ca.jpg",
+    "static/media/jimmy_hasty_family.jpg": "./static/media/jimmy_hasty_family.379bcf42b2a6016c885b.jpg",
+    "static/media/jimmy_hasty_cup.jpg": "./static/media/jimmy_hasty_cup.29f801c8a0e7f1f72d10.jpg",
+    "static/media/dttstt_model_tshirt.jpg": "./static/media/dttstt_model_tshirt.8d5df25434769f48e9f4.jpg",
+    "static/media/dttstt_model_female_hoody.jpg": "./static/media/dttstt_model_female_hoody.e11e4d759e81da6c554d.jpg",
+    "static/media/dttstt_model_dreds.jpg": "./static/media/dttstt_model_dreds.7ca1548736dd1833525c.jpg",
+    "static/media/dttstt_distillery.jpg": "./static/media/dttstt_distillery.bf7a1c1ff4e43c6a1c1b.jpg",
+    "static/media/dttstt_model_male_stairs.jpg": "./static/media/dttstt_model_male_stairs.e0b4b37cd730175772d8.jpg",
+    "static/media/tommy_mcconville_cup.jpg": "./static/media/tommy_mcconville_cup.6f45a6859f11681571b0.jpg",
+    "static/media/tommy_mcconville_logo.jpg": "./static/media/tommy_mcconville_logo.013aec8b6edd4175b6b1.jpg",
+    "static/media/tommy_mcconville.jpg": "./static/media/tommy_mcconville.5201b0b72f1f4f2cc305.jpg",
+    "static/media/jimmy_hasty_logo.jpg": "./static/media/jimmy_hasty_logo.19d1ff19f7891511bdd0.jpg",
+    "static/media/tommy_mcconville_profile.jpg": "./static/media/tommy_mcconville_profile.5381e7f1b5127fb2ca08.jpg",
+    "static/media/tommy_mcconville_full_profile.jpg": "./static/media/tommy_mcconville_full_profile.8ebe90ae59312fe1daad.jpg",
+    "static/media/jimmy_hasty_profile.jpg": "./static/media/jimmy_hasty_profile.19a257e0bb8a8d7d797d.jpg",
+    "static/media/bnw-logo.webp": "./static/media/bnw-logo.a7a6d3f331bc5018c965.webp",
+    "static/media/crest-inverted.webp": "./static/media/crest-inverted.3a636f4f2cbfed734471.webp",
+    "index.html": "./index.html",
+    "main.67cd4880.js.map": "./static/js/main.67cd4880.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.67cd4880.js"
+  ]
+}

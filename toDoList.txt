@@ -1,0 +1,36 @@
+13) add in shipping cost price to stripe payment
+
+
+
+
+
+done
+6) need to add a payment - send the productID to backend then send back the link
+7) need to persist my cart data
+3)need to make the order summary dynamic
+9)change size selector component on product
+allow deletion of item from cart
+11) create an order model and order endpoints
+8) need to add some notification that the user has successfully added an item to cart
+15) integrate an item into cart rather than create a new cart item, adding quantities together
+12) add security for the admin login product routes -
+need to update product routes, including making it exportable and able to pass passport into it.
+need to make 
+4)need to update all my products
+14) create an admin dashboard for bookings
+2)at the end need to make the page responsive
+15) need to create alternative pictures for upload
+        alter product model for multiple picutres / maybe secondary pictures
+        allow for multiple uploads to firebase.
+        update the product component to show multiple pictures (small pictures which can be clicked on and show it in the product window)
+        update the admin product upload page to include this
+        include product update as well
+16) need to remove pointer click events for when customer details form is up;
+17)add cancel button to this form
+1)need to change the home product to carry the correct product info
+perhaps do this with a UL
+18)need to clear cart once I purchase has gone through
+10) Comment All Code
+20)add progress bar for uploading/ updating documents (pointer State update)
+19) change buttons to show that they have been pressed and something has been done
+22) set up login failure redirect in user routes? or check if it is working
