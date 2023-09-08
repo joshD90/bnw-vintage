@@ -48,7 +48,56 @@ Install frontend Dependencies
 `cd ../client`
 `npm i`
 
-### Run Front and Backend
-  
+### Set Up .env files
+
+Create an MongoDB Atlas account and get the connection string to be plugged into .env file.
+Set up your own Stripe account with stripe Secret
+
+cd into api-bnw
+
+Create a file '.env'
+
+```
+PORT = 
+ATLAS_PASSWORD = 
+ATLAS_USERNAME = 
+STRIPE_SECRET = 
+CLIENT_URL = 
+PASSPORT_SESSION_SECRET =
+
+```
+Fill in own custom details into .env according to this format.
+
+cd into bnw-client
+
+Create a file '.env'
+
+```
+REACT_APP_FIREBASE_KEY = 
+REACT_APP_ADMIN_EMAIL = 
+REACT_APP_ADMIN_PASSWORD = 
+REACT_APP_ADMIN_UID = 
+REACT_APP_BASE_URL =
+
+```
+
+Fill in own custom details into .env according to this format
+
+## Get it up and Running
+
+Go to root of entire folder
+`cd api-bnw`
+
+`nodemon index.jsz`
+
+`cd ../bnw-client`
+
+`npm start`
+
+Go to preferred browser and open a new tab at 'http://localhost:3000'
+
+If you would like to view the live website without having to do any setup please visit
+[here](https://bnw.joshuadanceywebdev.ie/)
+
 
 
